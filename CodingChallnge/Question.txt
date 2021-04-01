@@ -1,0 +1,36 @@
+Given a 
+string, str and an
+integer, n and an
+integer, startPos.
+
+Write a fuction which draw a Hexagon.
+
+n should be a multiple of 6.
+n should be between 1 & 60.
+
+Length of the string should be less than or equal to n. 
+If the string length is less than n, then str[(n - str.length)] to str[n] should be  "*".
+
+For example, if  
+str = "abcdefgh";
+n = 12;
+startPos = 3;
+
+Output should look like below,
+	    d  
+	  e   c
+	f       b
+	g       a -----> startPos - 3
+	h       *
+	  *   *
+	    *  
+
+if str = "abcd";
+   n = 6;
+   startPos = 2;
+
+
+	  c  
+	d   b
+	*   a ----> startPos - 2
+	  * 
