@@ -1,0 +1,31 @@
+package practice2;
+import java.util.*;
+
+
+/*Given a list of numbers, return whether any two sums to k. 
+ * For example, given [10, 15, 3, 7] and k of 17, return "10 and 7" since 10 + 7 is 17.*/
+
+@SuppressWarnings("unused")
+public class Practice {
+	public static String can_sum(List<Integer> list, int k) {
+		Map<Integer, Integer> pos_sum_entry = new HashMap<>();
+		
+		for(Integer num: list) {
+			Integer temp = pos_sum_entry.get(num);
+			if(temp != null) {
+				return temp.toString() + " and " + num.toString();
+			}
+			else{
+				pos_sum_entry.put(k - num, num);
+			}
+		}
+		return "No output";
+	}
+
+	public static void main(String[] args) {
+		Integer[] list = {10, 15, 3, 7};
+		List<Integer> lst = new ArrayList<>(Arrays.asList(list));
+		int k = 23;
+		System.out.println(can_sum(lst, k));
+	}
+}
